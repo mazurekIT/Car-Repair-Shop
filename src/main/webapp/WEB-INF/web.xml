@@ -8,10 +8,10 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     <!--<servlet>-->
         <!--<servlet-name>Home</servlet-name>-->
         <!--<servlet-class>pl.coderslab.controller.HomePage</servlet-class>-->
-        <!--&lt;!&ndash;<init-param>&ndash;&gt;-->
-        <!--&lt;!&ndash;<param-name>number</param-name>&ndash;&gt;-->
-        <!--&lt;!&ndash;<param-value>5</param-value>&ndash;&gt;-->
-        <!--&lt;!&ndash;</init-param>&ndash;&gt;-->
+        <!--<init-param>-->
+        <!--<param-name>link</param-name>-->
+        <!--<param-value></param-value>-->
+        <!--</init-param>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
         <!--<servlet-name>Home</servlet-name>-->
@@ -30,8 +30,10 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet>
     <servlet-mapping>
         <servlet-name>Vehicle</servlet-name>
-        <url-pattern></url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+
 
 //FILTRY
     <filter>

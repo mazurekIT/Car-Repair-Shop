@@ -1,4 +1,8 @@
-<form action="/" method="post">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--TODO czy można to jakoś umieścić w filtrze--%>
+
+
+<form action="/vehicleSave" method="post">
     Marka:
     <input type="text" name="brand">
     <br>
@@ -18,5 +22,7 @@
     <input type="number" name="customer_id">
     <br>
     <input type="submit" value="Wyślij">
+
+   <%--TODO nie chcą sie pojawiać polskie znaki mimo filtra ustawionego na nie--%>
 
 </form>
