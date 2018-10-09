@@ -18,9 +18,7 @@
 
 <jsp:include page="header.jsp"/>
 
-
 <jsp:include page="${link}"/>
-
 
 <jsp:include page="footer.jsp"/>
 

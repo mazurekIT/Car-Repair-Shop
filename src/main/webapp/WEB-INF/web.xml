@@ -19,6 +19,49 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
+
+    //EMPOLYEE
+    <servlet>
+        <servlet-name>Employee</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeSaveToDb</servlet-class>
+        <init-param>
+        <param-name>link</param-name>
+        <param-value>/WEB-INF/employee-forms/EmployeeToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Employee</servlet-name>
+        <url-pattern>/SaveToDb</url-pattern>
+    </servlet-mapping>
+
+    //EMPOLYEE DEL
+    <servlet>
+        <servlet-name>EmployeeDel</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeDel</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeDel.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeDel</servlet-name>
+        <url-pattern>/Del</url-pattern>
+    </servlet-mapping>
+
+    //EMPOLYEE LOAD ALL
+    <servlet>
+        <servlet-name>EmployeeAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeAll</servlet-name>
+        <url-pattern>/EmployeeAll</url-pattern>
+    </servlet-mapping>
+
     //VEHICLE
     <servlet>
         <servlet-name>VehicleAdd</servlet-name>
@@ -60,6 +103,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
+
     //FILTRY
     <filter>
         <filter-name>EncodingFilter</filter-name>
@@ -72,6 +116,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
             <param-name>contentType</param-name>
             <param-value>text/html</param-value>
         </init-param>
+
     </filter>
     <filter-mapping>
         <filter-name>EncodingFilter</filter-name>
