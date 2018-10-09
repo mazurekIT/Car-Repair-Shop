@@ -112,7 +112,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
 
         <servlet-name>OrderLoadAll</servlet-name>
 
-        <url-pattern>/Load</url-pattern>
+        <url-pattern>/LoadAllOrders</url-pattern>
 
     </servlet-mapping>
 

@@ -8,7 +8,7 @@
 
     <a href="/1"><button type="button" class="btn btn-customer">KLIENCI</button></a>
 
-    <a href="/2"><button type="button" class="btn btn-order">ZLECENIA</button></a>
+    <a href="/LoadAllOrders"><button type="button" class="btn btn-order">ZLECENIA</button></a>
 
     <a href="/3"><button type="button" class="btn btn-employee">PRACOWNICY</button></a>
 

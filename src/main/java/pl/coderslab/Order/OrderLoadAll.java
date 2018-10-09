@@ -16,22 +16,12 @@ public class OrderLoadAll extends HttpServlet {
 
     String link;
 
-
-
     public void init() {
-
         try {
-
             link = getInitParameter("link");
-
         } catch (Exception e) {
-
             System.out.println("Bląd linków");
-
-
-
         }
-
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,6 +29,7 @@ public class OrderLoadAll extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         ArrayList<OrderDao> lista = OrderDao.loadAll();
 
         request.setAttribute("link",link);
