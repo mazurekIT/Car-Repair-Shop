@@ -9,13 +9,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
 
-public class OrderDao extends Order{
+public class OrderDao extends Order {
 
-    public OrderDao(Date date_in, Date date_out, Date started_date, int employee_id, String issue_note, String repair_note, int status_id, int vehicle_id, int repair_cost, int parts_cost,int man_hours) {
+    public OrderDao(Date date_in, Date date_out, Date started_date, int employee_id, String issue_note, String repair_note, int status_id, int vehicle_id, int repair_cost, int parts_cost, int man_hours) {
         super(date_in, date_out, started_date, employee_id, issue_note, repair_note, status_id, vehicle_id, repair_cost, parts_cost, man_hours);
     }
 
-
+    public OrderDao() {
+    }
 
     public void saveToDB() throws SQLException {
 
@@ -93,7 +94,7 @@ public class OrderDao extends Order{
 
                 preparedStatement.setInt(11, this.getMan_hours());
 
-                preparedStatement.setInt(12,this.getId());
+                preparedStatement.setInt(12, this.getId());
 
                 preparedStatement.executeUpdate();
 
@@ -104,8 +105,37 @@ public class OrderDao extends Order{
             e.printStackTrace();
 
         }
+    }
+
+        public void delete () throws SQLException {
+
+            try {
+
+                Connection connection = DbUtil.getConn();
+
+                if (this.getId() != 0) {
+
+                    String sql = "delete from orders where id=?";
+
+                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+                    preparedStatement.setInt(1, this.getId());
+
+                    preparedStatement.executeUpdate();
+
+                    this.setId(0);
+
+                }
+
+            } catch (SQLException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
 
 
     }
-}
+
 

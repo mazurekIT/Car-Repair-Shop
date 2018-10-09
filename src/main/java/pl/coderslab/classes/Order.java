@@ -33,6 +33,8 @@ public class Order {
         this.man_hours = man_hours;
     }
 
+    public Order() {
+    }
 
     public Date getDate_in() {
         return date_in;

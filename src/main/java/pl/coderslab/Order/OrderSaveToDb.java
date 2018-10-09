@@ -44,7 +44,7 @@ public class OrderSaveToDb extends HttpServlet {
 
         int employee_id = Integer.parseInt(request.getParameter("employee_id"));
 
-        String issue_note = request.getParameter("get_parameter");
+        String issue_note = request.getParameter("issue_note");
 
         String repair_note = request.getParameter("repair_note");
 
@@ -62,7 +62,7 @@ public class OrderSaveToDb extends HttpServlet {
 
         try {
             order.saveToDB();
-        } catch (SQLException e) { // tu się wywala
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
