@@ -4,20 +4,21 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
 
-
-
+//SERVLET DOMOWY
     <servlet>
         <servlet-name>Home</servlet-name>
         <servlet-class>pl.coderslab.controller.HomePage</servlet-class>
         <init-param>
             <param-name>link</param-name>
-            <param-value>/WEB-INF/views/home.jsp</param-value>
+            <param-value>/WEB-INF/vehicle-forms/home.jsp</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+
 
     //EMPOLYEE
     <servlet>
@@ -60,16 +61,62 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>EmployeeAll</servlet-name>
         <url-pattern>/EmployeeAll</url-pattern>
     </servlet-mapping>
+
+    //VEHICLE
+    <servlet>
+        <servlet-name>VehicleAdd</servlet-name>
+        <servlet-class>pl.coderslab.controller.vehicle.VehicleSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/saveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleAdd</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VehicleDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.vehicle.VehicleDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/deleteFromDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleDelete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Vehicle1LoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.vehicle.VehicleLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/loadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Vehicle1LoadAll</servlet-name>
+        <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+
+
+
     //FILTRY
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>pl.coderslab.filters.EncodingFilter</filter-class>
         <init-param>
             <param-name>charsetEncoding</param-name>
-            <param-value>UTF-8</param-value></init-param>
+            <param-value>UTF-8</param-value>
+        </init-param>
         <init-param>
             <param-name>contentType</param-name>
-            <param-value>text/html</param-value></init-param>
+            <param-value>text/html</param-value>
+        </init-param>
+
     </filter>
     <filter-mapping>
         <filter-name>EncodingFilter</filter-name>
