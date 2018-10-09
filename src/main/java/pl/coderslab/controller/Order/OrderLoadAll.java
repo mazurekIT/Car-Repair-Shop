@@ -32,9 +32,9 @@ public class OrderLoadAll extends HttpServlet {
 
         ArrayList<OrderDao> lista = OrderDao.loadAll();
 
-        request.setAttribute("link",link);
-        request.setAttribute("lista",lista);
+        request.setAttribute("link", link);
+        request.setAttribute("lista", lista);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request,response);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }
 }

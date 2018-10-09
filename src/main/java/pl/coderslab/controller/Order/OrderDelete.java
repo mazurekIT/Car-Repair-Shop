@@ -14,6 +14,7 @@ import java.sql.SQLException;
 @WebServlet(name = "OrderDelete")
 public class OrderDelete extends HttpServlet {
     String link;
+
     public void init() {
         try {
             link = getInitParameter("link");
@@ -22,6 +23,7 @@ public class OrderDelete extends HttpServlet {
         }
 
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
@@ -37,8 +39,8 @@ public class OrderDelete extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("link",link);
-        getServletContext().getRequestDispatcher("/WEB-INF/order-forms/OrderDelete.jsp").forward(request,response);
+        request.setAttribute("link", link);
+        getServletContext().getRequestDispatcher("/WEB-INF/order-forms/OrderDelete.jsp").forward(request, response);
 
     }
 }

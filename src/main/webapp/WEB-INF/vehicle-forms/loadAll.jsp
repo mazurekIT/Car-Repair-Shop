@@ -27,5 +27,7 @@
     </c:forEach>
 </table>
 <br>
-<a href="/vehicle_save"><button type="button" class="btn btn-raport">Dodaj samochód</button></a>
+<a href="/vehicle_save">
+    <button type="button" class="btn btn-raport">Dodaj samochód</button>
+</a>
 

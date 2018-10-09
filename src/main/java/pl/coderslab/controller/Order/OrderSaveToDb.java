@@ -38,7 +38,7 @@ public class OrderSaveToDb extends HttpServlet {
         int repair_cost = Integer.parseInt(request.getParameter("repair_cost"));
         int parts_cost = Integer.parseInt(request.getParameter("parts_cost"));
         int man_hours = Integer.parseInt(request.getParameter("man_hours"));
-        OrderDao order = new OrderDao(date_in,date_out,started_date,employee_id,issue_note,repair_note,status_id,vehicle_id,repair_cost,parts_cost,man_hours);
+        OrderDao order = new OrderDao(date_in, date_out, started_date, employee_id, issue_note, repair_note, status_id, vehicle_id, repair_cost, parts_cost, man_hours);
         try {
             order.saveToDB();
         } catch (SQLException e) {
@@ -49,12 +49,11 @@ public class OrderSaveToDb extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("link",link);
-        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request,response);
+        request.setAttribute("link", link);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
 
     }
 }
-
 
 
 //preparedStatement.setDate(1, this.getDate_in());

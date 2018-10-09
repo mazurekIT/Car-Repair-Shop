@@ -7,6 +7,4 @@
     <input type="submit" value="Wyślij"><br>
 
 
-
-
 </form>

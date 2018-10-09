@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Vehicle {
 
-    private int id=0;
+    private int id = 0;
     private String brand;
     private String model;
     private int production_year;

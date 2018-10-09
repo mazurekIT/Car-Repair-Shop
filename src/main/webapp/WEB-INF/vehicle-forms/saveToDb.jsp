@@ -27,5 +27,5 @@
         Id klienta:
         <input type="number" name="customer_id">
     </label>
-        <input type="submit" value="Wyślij">
+    <input type="submit" value="Wyślij">
 </form>

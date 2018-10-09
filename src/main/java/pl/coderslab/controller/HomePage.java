@@ -18,6 +18,7 @@ public class HomePage extends HttpServlet {
             System.out.println("Bląd linków");
         }
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Customer {
 
-    private int id=0;
+    private int id = 0;
     private String name;
     private String surname;
     private Date birthDate;

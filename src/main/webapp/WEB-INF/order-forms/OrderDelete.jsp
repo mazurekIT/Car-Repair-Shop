@@ -5,5 +5,5 @@
         Id Zlecenia:
         <input type="number" name="id"><br><br>
     </label>
-        <input type="submit">
+    <input type="submit">
 </form>

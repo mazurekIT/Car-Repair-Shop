@@ -109,35 +109,35 @@ public class OrderDao extends Order {
         }
     }
 
-        public void delete () throws SQLException {
+    public void delete() throws SQLException {
 
-            try {
+        try {
 
-                Connection connection = DbUtil.getConn();
+            Connection connection = DbUtil.getConn();
 
-                if (this.getId() != 0) {
+            if (this.getId() != 0) {
 
-                    String sql = "delete from orders where id=?";
+                String sql = "delete from orders where id=?";
 
-                    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-                    preparedStatement.setInt(1, this.getId());
+                preparedStatement.setInt(1, this.getId());
 
-                    preparedStatement.executeUpdate();
+                preparedStatement.executeUpdate();
 
-                    this.setId(0);
-
-                }
-
-            } catch (SQLException e) {
-
-                e.printStackTrace();
+                this.setId(0);
 
             }
 
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
         }
 
-    private static void getOrderData(ArrayList<OrderDao> OrderLista,ResultSet resultSet) throws SQLException {
+    }
+
+    private static void getOrderData(ArrayList<OrderDao> OrderLista, ResultSet resultSet) throws SQLException {
 
         while (resultSet.next()) {
 
@@ -168,7 +168,6 @@ public class OrderDao extends Order {
             loadedOrder.setMan_hours(resultSet.getInt("man_hours"));
 
             OrderLista.add(loadedOrder);
-
 
 
         }
@@ -202,7 +201,6 @@ public class OrderDao extends Order {
         return null;
 
     }
-
 
 
 }

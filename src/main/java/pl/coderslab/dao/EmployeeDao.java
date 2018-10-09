@@ -85,7 +85,7 @@ public class EmployeeDao extends Employee {
         }
     }
 
-    public static ArrayList<EmployeeDao> loadAll()  {
+    public static ArrayList<EmployeeDao> loadAll() {
         try {
             Connection connection = DbUtil.getConn();
             ArrayList<EmployeeDao> employeeDaos = new ArrayList<>();

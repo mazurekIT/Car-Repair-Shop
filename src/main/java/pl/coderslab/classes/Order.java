@@ -19,7 +19,7 @@ public class Order {
     private int parts_cost;
     private int man_hours;
 
-    public Order(Date date_in, Date date_out, Date started_date, int employee_id, String issue_note, String repair_note, int status_id, int vehicle_id, int repair_cost, int parts_cost,int man_hours) {
+    public Order(Date date_in, Date date_out, Date started_date, int employee_id, String issue_note, String repair_note, int status_id, int vehicle_id, int repair_cost, int parts_cost, int man_hours) {
         this.date_in = date_in;
         this.date_out = date_out;
         this.started_date = started_date;
