@@ -18,3 +18,5 @@
     </tr>
 </c:forEach>
 </table>
+
+<a href="/SaveToDb"><button type="button" class="btn btn-order">Dodaj nowe zlecenie</button></a>
