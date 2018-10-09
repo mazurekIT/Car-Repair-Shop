@@ -11,4 +11,7 @@
             <td>${lista.hourly}</td>
         </tr>
     </c:forEach>
+
 </table>
+<br>
+<a href="/SaveToDb"><button type="button" class="btn btn-employee">DODAJ PRACOWNIKA</button></a>
