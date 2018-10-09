@@ -9,6 +9,9 @@ public class Employee {
     private String note;
     private int hourly;
 
+    public Employee() {
+
+    }
 
     public Employee(String name, String lastname, String adress, long employee_phone, String note, int hourly) {
         this.name = name;

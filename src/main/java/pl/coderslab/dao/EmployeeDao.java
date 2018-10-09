@@ -13,6 +13,9 @@ public class EmployeeDao extends Employee {
     public EmployeeDao(String name, String lastname, String adress, long employee_phone, String note, int hourly) {
         super(name, lastname, adress, employee_phone, note, hourly);
     }
+    public EmployeeDao(){
+
+    }
 
     public void saveToDB() throws SQLException {
         try {
@@ -48,4 +51,19 @@ public class EmployeeDao extends Employee {
             e.printStackTrace();
         }
     }
+    public void delete() throws SQLException {
+        try {
+            Connection connection = DbUtil.getConn();
+            if (this.getId() != 0) {
+                String sql = "delete from employees where id=?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, this.getId());
+                preparedStatement.executeUpdate();
+                this.setId(0);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

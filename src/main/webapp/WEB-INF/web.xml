@@ -32,6 +32,20 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern></url-pattern>
     </servlet-mapping>
 
+    //EMPOLYEE DEL
+    <servlet>
+        <servlet-name>EmployeeDel</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeDel</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeDel.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeDel</servlet-name>
+        <url-pattern>/Del</url-pattern>
+    </servlet-mapping>
+
     //FILTRY
     <filter>
         <filter-name>EncodingFilter</filter-name>
