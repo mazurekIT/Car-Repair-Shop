@@ -8,14 +8,14 @@ public class Customer {
     private String name;
     private String surname;
     private Date birthDate;
-    private int customerPhone;
+    private long customer_phone;
 
-    public Customer(String name, String surname, Date birthDate, int customerPhone) {
+    public Customer(String name, String surname, Date birthDate, long customer_phone) {
 
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
-        this.customerPhone = customerPhone;
+        this.customer_phone = customer_phone;
     }
 
     public int getId() {
@@ -53,14 +53,14 @@ public class Customer {
         this.birthDate = birthDate;
     }
 
-    public int getCustomerPhone() {
+    public long getCustomerPhone() {
 
-        return customerPhone;
+        return customer_phone;
     }
 
-    public void setCustomerPhone(int customerPhone) {
+    public void setCustomerPhone(long customer_phone) {
 
-        this.customerPhone = customerPhone;
+        this.customer_phone = customer_phone;
     }
 
     public void setId(int id) {

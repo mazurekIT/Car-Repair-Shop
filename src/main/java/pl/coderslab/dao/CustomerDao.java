@@ -11,9 +11,9 @@ import java.sql.Date;
 
 public class CustomerDao extends Customer{
 
-    public CustomerDao(String name, String surname, Date birthDate, int customerPhone) {
+    public CustomerDao(String name, String surname, Date birthDate, long customer_phone) {
 
-        super(name, surname, birthDate, customerPhone);
+        super(name, surname, birthDate, customer_phone);
     }
 
     public void saveToDB() throws SQLException {
@@ -27,7 +27,7 @@ public class CustomerDao extends Customer{
                 preparedStatement.setString(1, this.getName());
                 preparedStatement.setString(2, this.getSurname());
                 preparedStatement.setDate(3, this.getBirthDate());
-                preparedStatement.setInt(4, this.getCustomerPhone());
+                preparedStatement.setLong(4, this.getCustomerPhone());
 
                 preparedStatement.executeUpdate();
                 ResultSet resultSet = preparedStatement.getGeneratedKeys();
@@ -41,7 +41,7 @@ public class CustomerDao extends Customer{
                 preparedStatement.setString(1, this.getName());
                 preparedStatement.setString(2, this.getSurname());
                 preparedStatement.setDate(3, this.getBirthDate());
-                preparedStatement.setInt(4, this.getCustomerPhone());
+                preparedStatement.setLong(4, this.getCustomerPhone());
                 preparedStatement.executeUpdate();
             }
 

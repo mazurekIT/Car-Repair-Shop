@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
-import java.util.List;
+import java.sql.SQLException;
 
 @WebServlet(name = "CustomerSaveToDb")
 public class CustomerSaveToDb extends HttpServlet {
 
     String link;
+
     public void init() {
 
         try {
@@ -32,12 +33,15 @@ public class CustomerSaveToDb extends HttpServlet {
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         Date birthdate = Date.valueOf(request.getParameter("birthdate"));
-        int customerPhone = Integer.parseInt(request.getParameter("customerPhone"));
-
-
-        CustomerDao customerDao = new CustomerDao(name,surname,birthdate, customerPhone);
-
-
+        long customerPhone = Long.parseLong(request.getParameter("customerPhone"));
+        CustomerDao customerDao = new CustomerDao(name, surname, birthdate, customerPhone);
+        try {
+            customerDao.saveToDB();
+            System.out.println("Connected to database.");
+        } catch (SQLException e) {
+            System.out.println("Save error");
+            e.printStackTrace();
+        }
 
     }
 
