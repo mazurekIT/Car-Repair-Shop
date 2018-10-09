@@ -10,10 +10,12 @@ public class EncodingFilter implements Filter {
     private String contentType = "text/html";
 
     public void destroy() {
+
     }
 
 
     public void doFilter(ServletRequest request, ServletResponse response,
+
                          FilterChain filterChain) throws IOException, ServletException {
         request.setCharacterEncoding(charsetEncoding);
         response.setContentType(contentType);
