@@ -21,6 +21,9 @@ public class Vehicle {
         this.customer_id = customer_id;
     }
 
+    public Vehicle() {
+    }
+
     public int getId() {
         return id;
     }

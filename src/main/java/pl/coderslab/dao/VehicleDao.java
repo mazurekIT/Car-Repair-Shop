@@ -4,11 +4,15 @@ import pl.coderslab.DbUtil.DbUtil;
 import pl.coderslab.classes.Vehicle;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class VehicleDao extends Vehicle {
 
     public VehicleDao(String brand, String model, int production_date, String plate_number, Date next_service_date, int customer_id) {
         super(brand, model, production_date, plate_number, next_service_date, customer_id);
+    }
+
+    public VehicleDao() {
     }
 
     public void saveToDB() throws SQLException {
@@ -30,7 +34,7 @@ public class VehicleDao extends Vehicle {
                     this.setId(resultSet.getInt(1));
                 }
             } else {
-                String sql = "update vehicles set brand=?, model=?, production_year=?, plate_number=?, next_service_date=?, customer_id=?";
+                String sql = "update vehicles set brand=?, model=?, production_year=?, plate_number=?, next_service_date=?, customer_id=? where id=?";
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, this.getBrand());
                 preparedStatement.setString(2, this.getModel());
@@ -38,7 +42,24 @@ public class VehicleDao extends Vehicle {
                 preparedStatement.setString(4,this.getPlate_number());
                 preparedStatement.setDate(5,this.getNext_service_date());
                 preparedStatement.setInt(6,this.getCustomer_id());
+                preparedStatement.setInt(7, this.getId());
                 preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void delete() throws SQLException {
+        try {
+            Connection connection = DbUtil.getConn();
+            if (this.getId() != 0) {
+                String sql = "delete from vehicles where id=?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, this.getId());
+                preparedStatement.executeUpdate();
+                this.setId(0);
             }
         } catch (SQLException e) {
             e.printStackTrace();

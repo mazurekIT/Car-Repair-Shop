@@ -23,6 +23,6 @@
     <br>
     <input type="submit" value="Wyślij">
 
-   <%--TODO nie chcą sie pojawiać polskie znaki mimo filtra ustawionego na nie--%>
+
 
 </form>
