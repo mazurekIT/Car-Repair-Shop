@@ -7,15 +7,15 @@ public class Vehicle {
     private int id=0;
     private String brand;
     private String model;
-    private int production_date;
+    private int production_year;
     private String plate_number;
     private Date next_service_date;
     private int customer_id;
 
-    public Vehicle(String brand, String model, int production_date, String plate_number, Date next_service_date, int customer_id) {
+    public Vehicle(String brand, String model, int production_year, String plate_number, Date next_service_date, int customer_id) {
         this.brand = brand;
         this.model = model;
-        this.production_date = production_date;
+        this.production_year = production_year;
         this.plate_number = plate_number;
         this.next_service_date = next_service_date;
         this.customer_id = customer_id;
@@ -48,12 +48,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public int getProduction_date() {
-        return production_date;
+    public int getProduction_year() {
+        return production_year;
     }
 
-    public void setProduction_date(int production_date) {
-        this.production_date = production_date;
+    public void setProduction_year(int production_year) {
+        this.production_year = production_year;
     }
 
     public String getPlate_number() {
