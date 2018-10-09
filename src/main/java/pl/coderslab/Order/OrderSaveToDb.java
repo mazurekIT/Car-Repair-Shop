@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 
 @WebServlet(name = "OrderSaveToDb")
 public class OrderSaveToDb extends HttpServlet {
@@ -59,11 +60,11 @@ public class OrderSaveToDb extends HttpServlet {
 
         OrderDao order = new OrderDao(date_in,date_out,started_date,employee_id,issue_note,repair_note,status_id,vehicle_id,repair_cost,parts_cost,man_hours);
 
-//        try {
-//            order.saveToDB();
-//        } catch (SQLException e) { // tu się wywala
-//            e.printStackTrace();
-//        }
+        try {
+            order.saveToDB();
+        } catch (SQLException e) { // tu się wywala
+            e.printStackTrace();
+        }
 
 
     }

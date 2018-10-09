@@ -15,8 +15,7 @@
 
 <jsp:include page="header.jsp"/>
 
-lista klientów
-
+<jsp:include page="${link}"/>
 
 <jsp:include page="footer.jsp"/>
 
