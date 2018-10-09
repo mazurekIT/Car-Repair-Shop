@@ -2,11 +2,14 @@
 
 
 <form action="/delete" method="post">
-    Id klienta:
-    <input type="text" name="customer_id">
-    <br>
-    <input type="submit" value="Wyślij">
 
+    <label>
+        Id klienta:
+        <input type="text" name="customer_id">
+    </label>
+    <label>
+        <input type="submit" value="Wyślij">
+    </label>
 
 
 </form>
