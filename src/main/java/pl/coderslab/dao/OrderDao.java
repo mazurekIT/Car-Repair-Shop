@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderDao extends Order {
 
@@ -135,7 +137,74 @@ public class OrderDao extends Order {
 
         }
 
+    private static void getOrderData(ArrayList<OrderDao> OrderLista,ResultSet resultSet) throws SQLException {
+
+        while (resultSet.next()) {
+
+            OrderDao loadedOrder = new OrderDao();
+
+            loadedOrder.setId(resultSet.getInt("id"));
+
+            loadedOrder.setDate_in(resultSet.getDate("date_in"));
+
+            loadedOrder.setDate_out(resultSet.getDate("date_out"));
+
+            loadedOrder.setStarted_date(resultSet.getDate("started_date"));
+
+            loadedOrder.setEmployee_id(resultSet.getInt("employee_id"));
+
+            loadedOrder.setIssue_note(resultSet.getString("issue_note"));
+
+            loadedOrder.setRepair_note(resultSet.getString("repair_note"));
+
+            loadedOrder.setStatus_id(resultSet.getInt("status_id"));
+
+            loadedOrder.setVehicle_id(resultSet.getInt("vehicle_id"));
+
+            loadedOrder.setRepair_cost(resultSet.getInt("repair_cost"));
+
+            loadedOrder.setParts_cost(resultSet.getInt("parts_cost"));
+
+            loadedOrder.setMan_hours(resultSet.getInt("man_hours"));
+
+            OrderLista.add(loadedOrder);
+
+
+
+        }
 
     }
+
+    public static ArrayList<OrderDao> loadAll() {
+
+        try {
+
+            Connection connection = DbUtil.getConn();
+
+            ArrayList<OrderDao> orders = new ArrayList<>();
+
+            String sql = "SELECT * FROM orders";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            getOrderData(orders, resultSet);
+
+            return orders;
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+
+        return null;
+
+    }
+
+
+
+}
 
 

@@ -64,6 +64,8 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
 
     </servlet-mapping>
 
+
+
     <servlet>
 
         <servlet-name>OrderDelete</servlet-name>
@@ -85,6 +87,32 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>OrderDelete</servlet-name>
 
         <url-pattern>/Del</url-pattern>
+
+    </servlet-mapping>
+
+
+
+    <servlet>
+
+        <servlet-name>OrderLoadAll</servlet-name>
+
+        <servlet-class>pl.coderslab.Order.OrderLoadAll</servlet-class>
+
+        <init-param>
+
+            <param-name>link</param-name>
+
+            <param-value>/WEB-INF/order-forms/OrderLoadAll.jsp</param-value>
+
+        </init-param>
+
+    </servlet>
+
+    <servlet-mapping>
+
+        <servlet-name>OrderLoadAll</servlet-name>
+
+        <url-pattern>/Load</url-pattern>
 
     </servlet-mapping>
 
