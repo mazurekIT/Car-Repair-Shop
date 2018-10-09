@@ -1,22 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+
 http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
 
-
+//SERVLET DOMOWY
     <servlet>
         <servlet-name>Home</servlet-name>
         <servlet-class>pl.coderslab.controller.HomePage</servlet-class>
         <init-param>
             <param-name>link</param-name>
-            <param-value>/WEB-INF/Customer-forms/home.jsp</param-value>
+            <param-value>/WEB-INF/vehicle-forms/home.jsp</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
-        <url-pattern></url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+
+
+    //ORDERS
+
+    <servlet>
+        <servlet-name>Order</servlet-name>
+        <servlet-class>pl.coderslab.Order.OrderSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderSaveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Order</servlet-name>
+        <url-pattern>/SaveToDb</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>OrderDelete</servlet-name>
+        <servlet-class>pl.coderslab.Order.OrderDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderDelete.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderDelete</servlet-name>
+        <url-pattern>/Del</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>OrderLoadAll</servlet-name>
+        <servlet-class>pl.coderslab.Order.OrderLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderLoadAll</servlet-name>
+        <url-pattern>/LoadAllOrders</url-pattern>
+
+
+    //EMPOLYEE
+    <servlet>
+        <servlet-name>Employee</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeSaveToDb</servlet-class>
+        <init-param>
+        <param-name>link</param-name>
+        <param-value>/WEB-INF/employee-forms/EmployeeToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Employee</servlet-name>
+        <url-pattern>/SaveToDb</url-pattern>
+    </servlet-mapping>
+
+    //EMPOLYEE DEL
+    <servlet>
+        <servlet-name>EmployeeDel</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeDel</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeDel.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeDel</servlet-name>
+        <url-pattern>/Del</url-pattern>
+    </servlet-mapping>
+
+    //EMPOLYEE LOAD ALL
+    <servlet>
+        <servlet-name>EmployeeAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeAll</servlet-name>
+        <url-pattern>/EmployeeAll</url-pattern>
+    </servlet-mapping>
+
+    //VEHICLE
+    <servlet>
+        <servlet-name>VehicleAdd</servlet-name>
+        <servlet-class>pl.coderslab.controller.vehicle.VehicleSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/saveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleAdd</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VehicleDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.vehicle.VehicleDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/deleteFromDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleDelete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Vehicle1LoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.vehicle.VehicleLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/loadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Vehicle1LoadAll</servlet-name>
+        <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+
+
+
+    //FILTRY
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>pl.coderslab.filters.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>charsetEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>contentType</param-name>
+            <param-value>text/html</param-value>
+        </init-param>
+
+
+  
 
     //CUSTOMER - SAVE TO DB
 
@@ -82,3 +234,5 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </filter-mapping>
 
 </web-app>
+
+
