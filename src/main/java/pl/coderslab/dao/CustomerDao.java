@@ -9,11 +9,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
 
-public class CustomerDao extends Customer{
+public class CustomerDao extends Customer {
 
     public CustomerDao(String name, String surname, Date birthDate, long customer_phone) {
 
         super(name, surname, birthDate, customer_phone);
+    }
+
+    public CustomerDao() {
+
     }
 
     public void saveToDB() throws SQLException {
@@ -28,7 +32,6 @@ public class CustomerDao extends Customer{
                 preparedStatement.setString(2, this.getSurname());
                 preparedStatement.setDate(3, this.getBirthDate());
                 preparedStatement.setLong(4, this.getCustomerPhone());
-
                 preparedStatement.executeUpdate();
                 ResultSet resultSet = preparedStatement.getGeneratedKeys();
                 if (resultSet.next()) {
@@ -49,7 +52,23 @@ public class CustomerDao extends Customer{
             e.printStackTrace();
 
         }
+    }
 
+    public void delete() throws SQLException {
+
+        try (Connection connection = DbUtil.getConn()) {
+            if (this.getId() != 0) {
+            }
+            String sql = "DELETE FROM customers WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, this.getId());
+            preparedStatement.executeUpdate();
+            this.setId(0);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
     }
 
 }

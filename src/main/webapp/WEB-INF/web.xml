@@ -18,7 +18,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     <!--<url-pattern></url-pattern>-->
 <!--</servlet-mapping>-->
 
-    //CUSTOMER
+    //CUSTOMER - SAVE TO DB
 
     <servlet>
         <servlet-name>Customer</servlet-name>
@@ -32,6 +32,22 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>Customer</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    //Customer - DELETE
+
+    <servlet>
+        <servlet-name>Customer1</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/Delete.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Customer1</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
 
     //FILTRY
     <filter>

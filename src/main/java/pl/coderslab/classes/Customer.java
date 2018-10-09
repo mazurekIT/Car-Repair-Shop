@@ -18,6 +18,10 @@ public class Customer {
         this.customer_phone = customer_phone;
     }
 
+    public Customer() {
+
+    }
+
     public int getId() {
 
         return id;
