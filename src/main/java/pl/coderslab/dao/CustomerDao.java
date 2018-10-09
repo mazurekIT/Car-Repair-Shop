@@ -1,5 +1,6 @@
 package pl.coderslab.dao;
 
+import org.apache.commons.lang3.ArrayUtils;
 import pl.coderslab.DbUtil.DbUtil;
 import pl.coderslab.classes.Customer;
 
@@ -8,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class CustomerDao extends Customer {
 
@@ -71,5 +73,41 @@ public class CustomerDao extends Customer {
         }
     }
 
+    private static void getCustomerData(ArrayList<CustomerDao> CustomerLista, ResultSet resultSet) throws SQLException {
+
+        while (resultSet.next()) {
+            CustomerDao loadedCustomer = new CustomerDao();
+            loadedCustomer.setId(resultSet.getInt("id"));
+            loadedCustomer.setName(resultSet.getString("name"));
+            loadedCustomer.setSurname(resultSet.getString("surname"));
+            loadedCustomer.setBirthDate(resultSet.getDate("birthDate"));
+            loadedCustomer.setCustomerPhone(resultSet.getLong("customer_phone"));
+
+            CustomerLista.add(loadedCustomer);
+        }
+
+    }
+
+    public static ArrayList<CustomerDao> loadAll() {
+
+        try {
+            Connection connection = DbUtil.getConn();
+            ArrayList<CustomerDao> customers = new ArrayList<>();
+            String sql = "SELECT * FROM customers";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            getCustomerData(customers, resultSet);
+            return customers;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return null;
+
+    }
 
 }
+
+
