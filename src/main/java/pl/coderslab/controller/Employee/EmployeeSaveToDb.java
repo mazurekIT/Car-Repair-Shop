@@ -25,7 +25,7 @@ public class EmployeeSaveToDb extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String name = request.getParameter("title");
+            String name = request.getParameter("name");
             String lastname = request.getParameter("lastname");
             String adress = request.getParameter("adress");
             Long employee_phone = Long.parseLong(request.getParameter("employee_phone"));
@@ -33,23 +33,23 @@ public class EmployeeSaveToDb extends HttpServlet {
             int hourly = Integer.parseInt(request.getParameter("hourly"));
 
             EmployeeDao employeeDao = new EmployeeDao(name, lastname, adress, employee_phone, note, hourly);
-//            employeeDao.saveToDB();
+            employeeDao.saveToDB();
 
 
         } catch (NumberFormatException e) {
             System.out.println("zle wartosci");
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
-
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+
     }
 
-        protected void doGet (HttpServletRequest request, HttpServletResponse response) throws
-        ServletException, IOException {
-            request.setAttribute("link", link);
-            getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
 
-        }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        request.setAttribute("link", link);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+
     }
+}
