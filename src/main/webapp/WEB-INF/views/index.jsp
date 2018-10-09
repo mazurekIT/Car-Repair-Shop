@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--TODO czy można to jakoś umieścić w filtrze--%>
+
+
 <%--
   Created by IntelliJ IDEA.
   User: artur
@@ -15,7 +18,8 @@
 
 <jsp:include page="header.jsp"/>
 
-lista klientów
+
+<jsp:include page="${link}"/>
 
 
 <jsp:include page="footer.jsp"/>
