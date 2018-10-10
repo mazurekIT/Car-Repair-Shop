@@ -1,6 +1,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <table border="1" cellpadding="5">
+    <tr>
+        <td>Id</td>
+        <td>Data przyjęcia</td>
+        <td>Przewidywana naprawa</td>
+        <td>Rozpoczęcie naprawy</td>
+        <td>Id pracownika</td>
+        <td>Opis problemu</td>
+        <td>Opis naprawy</td>
+        <td>Status id</td>
+        <td>Id pojazdu</td>
+        <td>Koszt naprawy</td>
+        <td>Koszt części</td>
+        <td>Roboczogodziny</td>
+    </tr>
     <c:forEach var="lista" items="${lista}">
         <tr>
             <td>${lista.id}</td>

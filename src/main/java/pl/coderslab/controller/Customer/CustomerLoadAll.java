@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "loadAll")
 public class CustomerLoadAll extends HttpServlet {
@@ -31,10 +29,10 @@ public class CustomerLoadAll extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ArrayList<CustomerDao> lista = CustomerDao.loadAll();
+        ArrayList<CustomerDao> listadanych = CustomerDao.loadAll();
 
         request.setAttribute("link", link);
-        request.setAttribute("lista", lista);
+        request.setAttribute("listadanych", listadanych);
 
         getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
 

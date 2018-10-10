@@ -5,7 +5,7 @@ public class Employee {
     private String name;
     private String lastname;
     private String adress;
-    private long employee_phone;
+    private String employee_phone;
     private String note;
     private int hourly;
 
@@ -13,7 +13,7 @@ public class Employee {
 
     }
 
-    public Employee(String name, String lastname, String adress, long employee_phone, String note, int hourly) {
+    public Employee(String name, String lastname, String adress, String employee_phone, String note, int hourly) {
         this.name = name;
         this.lastname = lastname;
         this.adress = adress;
@@ -54,11 +54,11 @@ public class Employee {
         this.adress = adress;
     }
 
-    public long getEmployee_phone() {
+    public String getEmployee_phone() {
         return employee_phone;
     }
 
-    public void setEmployee_phone(long employee_phone) {
+    public void setEmployee_phone(String employee_phone) {
         this.employee_phone = employee_phone;
     }
 

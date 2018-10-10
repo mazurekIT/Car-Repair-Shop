@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class EmployeeDao extends Employee {
 
-    public EmployeeDao(String name, String lastname, String adress, long employee_phone, String note, int hourly) {
+    public EmployeeDao(String name, String lastname, String adress, String employee_phone, String note, int hourly) {
         super(name, lastname, adress, employee_phone, note, hourly);
     }
 
@@ -29,7 +29,7 @@ public class EmployeeDao extends Employee {
                 preparedStatement.setString(1, this.getName());
                 preparedStatement.setString(2, this.getLastname());
                 preparedStatement.setString(3, this.getAdress());
-                preparedStatement.setLong(4, this.getEmployee_phone());
+                preparedStatement.setString(4, this.getEmployee_phone());
                 preparedStatement.setString(5, this.getNote());
                 preparedStatement.setInt(6, this.getHourly());
                 preparedStatement.executeUpdate();
@@ -43,7 +43,7 @@ public class EmployeeDao extends Employee {
                 preparedStatement.setString(1, this.getName());
                 preparedStatement.setString(2, this.getLastname());
                 preparedStatement.setString(3, this.getAdress());
-                preparedStatement.setLong(4, this.getEmployee_phone());
+                preparedStatement.setString(4, this.getEmployee_phone());
                 preparedStatement.setString(5, this.getNote());
                 preparedStatement.setInt(6, this.getHourly());
                 preparedStatement.setInt(7, this.getId());
@@ -77,7 +77,7 @@ public class EmployeeDao extends Employee {
             employeeDao.setName(resultSet.getString("name"));
             employeeDao.setLastname(resultSet.getString("lastname"));
             employeeDao.setAdress(resultSet.getString("adress"));
-            employeeDao.setEmployee_phone(resultSet.getLong("employee_phone"));
+            employeeDao.setEmployee_phone(resultSet.getString("employee_phone"));
             employeeDao.setNote(resultSet.getString("note"));
             employeeDao.setHourly(resultSet.getInt("hourly"));
 

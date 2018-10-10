@@ -1,19 +1,14 @@
 package pl.coderslab.dao;
 
-import org.apache.commons.lang3.ArrayUtils;
 import pl.coderslab.DbUtil.DbUtil;
 import pl.coderslab.classes.Customer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Date;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class CustomerDao extends Customer {
 
-    public CustomerDao(String name, String surname, Date birthDate, long customer_phone) {
+    public CustomerDao(String name, String surname, Date birthDate, String customer_phone) {
 
         super(name, surname, birthDate, customer_phone);
     }
@@ -33,7 +28,7 @@ public class CustomerDao extends Customer {
                 preparedStatement.setString(1, this.getName());
                 preparedStatement.setString(2, this.getSurname());
                 preparedStatement.setDate(3, this.getBirthDate());
-                preparedStatement.setLong(4, this.getCustomerPhone());
+                preparedStatement.setString(4, this.getCustomer_phone());
                 preparedStatement.executeUpdate();
                 ResultSet resultSet = preparedStatement.getGeneratedKeys();
                 if (resultSet.next()) {
@@ -46,7 +41,7 @@ public class CustomerDao extends Customer {
                 preparedStatement.setString(1, this.getName());
                 preparedStatement.setString(2, this.getSurname());
                 preparedStatement.setDate(3, this.getBirthDate());
-                preparedStatement.setLong(4, this.getCustomerPhone());
+                preparedStatement.setString(4, this.getCustomer_phone());
                 preparedStatement.executeUpdate();
             }
 
@@ -81,7 +76,7 @@ public class CustomerDao extends Customer {
             loadedCustomer.setName(resultSet.getString("name"));
             loadedCustomer.setSurname(resultSet.getString("surname"));
             loadedCustomer.setBirthDate(resultSet.getDate("birthDate"));
-            loadedCustomer.setCustomerPhone(resultSet.getLong("customer_phone"));
+            loadedCustomer.setCustomer_phone(resultSet.getString("customer_phone"));
 
             CustomerLista.add(loadedCustomer);
         }

@@ -28,7 +28,7 @@ public class EmployeeSaveToDb extends HttpServlet {
             String name = request.getParameter("name");
             String lastname = request.getParameter("lastname");
             String adress = request.getParameter("adress");
-            Long employee_phone = Long.parseLong(request.getParameter("employee_phone"));
+            String employee_phone = request.getParameter("employee_phone");
             String note = request.getParameter("note");
             int hourly = Integer.parseInt(request.getParameter("hourly"));
 
@@ -42,7 +42,7 @@ public class EmployeeSaveToDb extends HttpServlet {
             e.printStackTrace();
         }
 
-
+        doGet(request, response);
     }
 
 

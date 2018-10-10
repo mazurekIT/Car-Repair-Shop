@@ -29,20 +29,22 @@ public class CustomerSaveToDb extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-        Date birthdate = Date.valueOf(request.getParameter("birthdate"));
-        long customerPhone = Long.parseLong(request.getParameter("customerPhone"));
-        CustomerDao customerDao = new CustomerDao(name, surname, birthdate, customerPhone);
         try {
+            String name = request.getParameter("name");
+            String surname = request.getParameter("surname");
+            Date birthdate = Date.valueOf(request.getParameter("birthdate"));
+            String customerPhone = request.getParameter("customer_phone");
+
+            CustomerDao customerDao = new CustomerDao(name, surname, birthdate, customerPhone);
             customerDao.saveToDB();
+
             System.out.println("Connected to database.");
+        } catch (NumberFormatException e) {
+            System.out.println("zle wartosci");
         } catch (SQLException e) {
-            System.out.println("Save error");
             e.printStackTrace();
         }
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

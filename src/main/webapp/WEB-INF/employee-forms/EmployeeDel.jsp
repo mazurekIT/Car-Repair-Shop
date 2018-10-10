@@ -2,9 +2,10 @@
 <form action="/employee_delete" method="POST">
     <label>
         Podaj ID pracownika do usuniecia:
-        <input type="number" name="id"><br><br>
+        <input type="number" name="id">
     </label>
-    <input type="submit" value="Wyślij"><br>
+    <br>
+    <input type="submit" value="Wyślij">
 
 
 </form>

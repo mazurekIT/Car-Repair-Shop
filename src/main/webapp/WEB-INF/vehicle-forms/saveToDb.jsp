@@ -2,7 +2,7 @@
 <%--TODO czy można to jakoś umieścić w filtrze--%>
 
 
-<form action="/add" method="post">
+<form action="/employee_save" method="post">
     <label>
         Marka:
         <input type="text" name="brand">

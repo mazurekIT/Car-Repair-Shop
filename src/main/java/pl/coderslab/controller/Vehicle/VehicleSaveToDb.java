@@ -30,13 +30,13 @@ public class VehicleSaveToDb extends HttpServlet {
         String plate_number = request.getParameter("plate_number");
         Date next_service_date = Date.valueOf(request.getParameter("next_service_date"));
         int customer_id = Integer.parseInt(request.getParameter("customer_id"));
-        VehicleDao vehicle = new VehicleDao(brand,model,production_date,plate_number,next_service_date,customer_id);
+        VehicleDao vehicle = new VehicleDao(brand, model, production_date, plate_number, next_service_date, customer_id);
         try {
             vehicle.saveToDB();
         } catch (SQLException e) {
             System.out.println("Błąd save");
         }
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

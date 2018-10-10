@@ -3,7 +3,8 @@
 <form action="/customer_delete" method="post">
     <label>
         Wprowadź id klienta, którego chcesz usunąć:
-        <input type="text" name="id"><br>
+        <input type="text" name="id">
+        <br>
     </label>
     <input type="submit" value="Wyślij">
 

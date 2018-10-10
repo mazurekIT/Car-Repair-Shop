@@ -45,6 +45,7 @@ public class OrderSaveToDb extends HttpServlet {
             e.printStackTrace();
         }
 
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -25,13 +25,11 @@ public class EmployeeDel extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             EmployeeDao employeeDaoDel = new EmployeeDao();
             employeeDaoDel.setId(id);
             employeeDaoDel.delete();
-
         } catch (NumberFormatException e) {
             System.out.println("zle wartosci");
         } catch (SQLException e) {

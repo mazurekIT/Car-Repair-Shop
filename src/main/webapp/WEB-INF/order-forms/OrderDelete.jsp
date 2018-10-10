@@ -3,7 +3,8 @@
 <form action="/order_delete" method="POST">
     <label>
         Id Zlecenia:
-        <input type="number" name="id"><br><br>
+        <input type="number" name="id">
     </label>
+    <br>
     <input type="submit">
 </form>
