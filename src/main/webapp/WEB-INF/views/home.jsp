@@ -3,6 +3,7 @@
 tu ma być lista
 <br>
 <br>
+<a href="/status_load_all"><button type="button" class="btn btn-status">STATUSY</button></a>
 <br>
 <br>
 

@@ -202,6 +202,49 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
+    //STATUS
+    <servlet>
+        <servlet-name>StatusSave</servlet-name>
+        <servlet-class>pl.coderslab.controller.Status.StatusSaveToDb</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Status-forms/statusSaveToDb.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatusSave</servlet-name>
+        <url-pattern>/status_save</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>StatusDelete</servlet-name>
+        <servlet-class>pl.coderslab.controller.Status.StatusDelete</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Status-forms/statusDelete.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatusDelete</servlet-name>
+        <url-pattern>/status_delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>StatusLoadAll</servlet-name>
+        <servlet-class>pl.coderslab.controller.Status.StatusLoadAll</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Status-forms/statusLoadAll.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatusLoadAll</servlet-name>
+        <url-pattern>/status_load_all</url-pattern>
+    </servlet-mapping>
+
+
     //FILTRY
     <filter>
 

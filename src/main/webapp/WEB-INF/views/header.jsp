@@ -9,6 +9,7 @@
     <%--<a href="/orders_load_all"><button type="button" class="btn btn-order">ZLECENIA</button></a>--%>
     <%--<a href="/employee_load_all"><button type="button" class="btn btn-employee">PRACOWNICY</button></a>--%>
     <%--<a href="/vehicle_load_all"><button type="button" class="btn btn-raport">RAPORTY</button></a>--%>
+        <%--<a href="/status_load_all"><button type="button" class="btn btn-status">STATUSY</button></a>--%>
     <%--<br>--%>
 
         <%--4 przyciski MAŁE ładne --%>
