@@ -13,7 +13,7 @@
     <br>
     <label>
         Data rozpoczęcia:
-        <input type="date" name="started_date">
+        <input type="date" name="started_date" required>
     </label>
     <br>
     <label>

@@ -29,7 +29,7 @@ public class OrderSaveToDb extends HttpServlet {
 
         Date date_in = Date.valueOf(request.getParameter("date_in"));
         Date date_out = Date.valueOf(request.getParameter("date_out"));
-        Date started_date = Date.valueOf(request.getParameter("date_out"));
+        Date started_date = Date.valueOf(request.getParameter("started_date"));
         int employee_id = Integer.parseInt(request.getParameter("employee_id"));
         String issue_note = request.getParameter("issue_note");
         String repair_note = request.getParameter("repair_note");

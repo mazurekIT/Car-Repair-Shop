@@ -1,6 +1,7 @@
-package pl.coderslab.controller.Order;
+package pl.coderslab.controller.Raport;
 
 import pl.coderslab.dao.OrderDao;
+import pl.coderslab.dao.Raport1Dao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,12 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
-import java.sql.SQLException;
+import java.util.ArrayList;
 
-@WebServlet(name = "OrderDelete")
-public class OrderDelete extends HttpServlet {
+@WebServlet(name = "Raport1")
+public class Raport1 extends HttpServlet {
     String link;
-
     public void init() {
         try {
             link = getInitParameter("link");
@@ -23,36 +23,27 @@ public class OrderDelete extends HttpServlet {
         }
 
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
-        OrderDao orderDao = new OrderDao();
-        orderDao.setId(id);
-        try {
-            orderDao.delete();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        String date_start = request.getParameter("date_start");
+        String date_end = request.getParameter("date_end");
 
-        request.setAttribute("link", "/WEB-INF/views/home.jsp");
+        ArrayList<Raport1Dao> raport1 = Raport1Dao.getRaport1(date_start, date_end);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+        request.setAttribute("raport1",raport1);
+
+        getServletContext().getRequestDispatcher("/WEB-INF/raports-forms/raport1Load.jsp").forward(request, response);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
 
-        OrderDao orderDao = new OrderDao();
-
-        orderDao.setId(id);
-
-        request.setAttribute("id",id);
 
         request.setAttribute("link", link);
         getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+
+
 
     }
 }

@@ -66,6 +66,18 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/orders_load_all</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>OrderUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Order.ServletOrderUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/order-forms/OrderUpdate.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderUpdate</servlet-name>
+        <url-pattern>/order_update</url-pattern>
+    </servlet-mapping>
 
 
 
@@ -345,6 +357,23 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>StatusLoadAll</servlet-name>
         <url-pattern>/status_load_all</url-pattern>
     </servlet-mapping>
+
+
+    //RAPORTY
+
+    <servlet>
+        <servlet-name>Raport1</servlet-name>
+        <servlet-class>pl.coderslab.controller.Raport.Raport1</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/raports-forms/raport1Form.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Raport1</servlet-name>
+        <url-pattern>/raport_1_form</url-pattern>
+    </servlet-mapping>
+
 
 
     //FILTRY
