@@ -9,6 +9,7 @@
         <td>Nazwisko</td>
         <td>Data urodzenia</td>
         <td>Numer telefonu</td>
+        <td>Pojazdy klienta</td>
     </tr>
 
     <c:forEach var="lis" items="${listadanych}">
@@ -19,6 +20,7 @@
             <td>${lis.surname}</td>
             <td>${lis.birthDate}</td>
             <td>${lis.customer_phone}</td>
+            <%--<td><a href="/vehicle_update?id=${vehicle.id}"><button type="button" class="btn btn-raport">Lista Samochodów</button></td>--%>
         </tr>
 
     </c:forEach>

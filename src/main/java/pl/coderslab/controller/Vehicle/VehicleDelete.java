@@ -1,5 +1,6 @@
 package pl.coderslab.controller.Vehicle;
 
+import pl.coderslab.controller.HomePage;
 import pl.coderslab.dao.VehicleDao;
 
 import javax.servlet.ServletException;
@@ -31,9 +32,19 @@ public class VehicleDelete extends HttpServlet {
             System.out.println("Błąd usuwania");
         }
 
+        request.setAttribute("link", "/WEB-INF/views/home.jsp");
+        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            VehicleDao vehicleDao = new VehicleDao();
+            int id = Integer.parseInt(request.getParameter("id"));
+            vehicleDao.setId(id);
+            request.setAttribute("id", id);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         request.setAttribute("link", link);
         getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }

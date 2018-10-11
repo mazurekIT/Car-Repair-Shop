@@ -4,12 +4,11 @@
 <form action="/vehicle_delete" method="post">
 
     <label>
-        Id samochodu:
-        <input type="text" name="id">
+        Czy jesteś pewien, że chcesz usunąć samochód o id:
+        <input type="text" name="id" value="${id}" readonly>
     </label>
     <label>
         <input type="submit" value="Wyślij">
     </label>
-
 
 </form>

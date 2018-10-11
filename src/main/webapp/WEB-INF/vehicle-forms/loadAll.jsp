@@ -12,6 +12,8 @@
         <td>Nr rejestracji</td>
         <td>Następny przegląd</td>
         <td>Id klienta</td>
+        <td>Edycja</td>
+        <td>Usuwanie</td>
     </tr>
 
     <c:forEach var="vehicle" items="${Lista}">
@@ -23,6 +25,9 @@
             <td>${vehicle.plate_number}</td>
             <td>${vehicle.next_service_date}</td>
             <td>${vehicle.customer_id}</td>
+            <%--<td><a href="/vehicle_update?id=${vehicle.id}"><button type="button" class="btn btn-raport">Edytuj Samochód</button></a></td>--%>
+            <td><a href="/vehicle_update?id=${vehicle.id}&model=${vehicle.model}&brand=${vehicle.brand}&production_year=${vehicle.production_year}&plate_number=${vehicle.plate_number}&next_service_date=${vehicle.next_service_date}&customer_id=${vehicle.customer_id}"><button type="button" class="btn btn-raport">Edytuj Samochód</button></a></td>
+            <td><a href="/vehicle_delete?id=${vehicle.id}"><button type="button" class="btn btn-raport">Usuń Samochód</button></a></td>
         </tr>
     </c:forEach>
 </table>

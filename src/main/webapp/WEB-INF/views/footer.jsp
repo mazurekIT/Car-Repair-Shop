@@ -2,8 +2,11 @@
 <%--TODO czy można to jakoś umieścić w filtrze--%>
 
 <footer>
-    <p>Kontakt mailowy: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
-    <p>Kontakt telefoniczny: 111 222 333</p>
+    <p>
+        Kontakt:
+        <br>mailowy: <a href="mailto:someone@example.com">someone@example.com</a>.
+        <br>telefoniczny: 111 222 333
+    </p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
