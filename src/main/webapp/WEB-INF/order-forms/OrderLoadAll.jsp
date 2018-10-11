@@ -14,8 +14,8 @@
         <td>Koszt naprawy</td>
         <td>Koszt części</td>
         <td>Roboczogodziny</td>
-        <td>Edytuj</td>
-        <td>Usuń</td>
+        <td>Edycja</td>
+        <td>Usuwanie</td>
     </tr>
     <c:forEach var="lista" items="${lista}">
         <tr>
@@ -55,12 +55,12 @@
 
             <td>
                 <a href = order_update?id=${lista.id}&date_in=${lista.date_in}&date_out=${lista.date_out}&started_date=${lista.started_date}&employee_id=${lista.employee_id}&issue_note=${lista.issue_note}&repair_note=${lista.repair_note}&status_id=${lista.status_id}&vehicle_id=${lista.vehicle_id}&repair_cost=${lista.repair_cost}&parts_cost=${lista.parts_cost}&man_hours=${lista.man_hours}>
-                    <button type = "button" class="btn btn-order">Edytuj</button>
+                    <button type = "button" class="btn btn-order">EDYTUJ</button>
                 </a>
             </td>
             <td>
                 <a href = order_delete?id=${lista.id}>
-                    <button type = "button" class="btn btn-order">Usuń</button>
+                    <button type = "button" class="btn btn-order">USUŃ</button>
                 </a>
             </td>
         </tr>

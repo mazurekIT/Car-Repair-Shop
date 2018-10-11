@@ -8,7 +8,7 @@
         <input type="text" name="id" value="${id}" readonly>
     </label>
     <label>
-        <input type="submit" value="Wyślij">
+        <input type="submit" value="Usuń">
     </label>
 
 </form>

@@ -1,5 +1,6 @@
 package pl.coderslab.controller.Vehicle;
 
+import pl.coderslab.dao.OrderDao;
 import pl.coderslab.dao.VehicleDao;
 
 import javax.servlet.ServletException;
@@ -22,14 +23,30 @@ public class VehicleUpdate extends HttpServlet {String link;
         }
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String brand = request.getParameter("brand");
+            String model = request.getParameter("model");
+            int production_date = Integer.parseInt(request.getParameter("production_date"));
+            String plate_number = request.getParameter("plate_number");
+            Date next_service_date = Date.valueOf(request.getParameter("next_service_date"));
+            int customer_id = Integer.parseInt(request.getParameter("customer_id"));
+            int id = Integer.parseInt(request.getParameter("id"));
 
+            VehicleDao vehicle = new VehicleDao(brand, model, production_date, plate_number, next_service_date, customer_id);
+            vehicle.setId(id);
+            vehicle.updateToDB();
 
+        } catch (NumberFormatException e) {
+            System.out.println("zle wartosci");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            VehicleDao vehicleDao=new VehicleDao();
             int id = Integer.parseInt(request.getParameter("id"));
             String brand = request.getParameter("brand");
             String model=request.getParameter("model");
@@ -38,7 +55,9 @@ public class VehicleUpdate extends HttpServlet {String link;
             Date next_service_date= Date.valueOf(request.getParameter("next_service_date"));
             int customer_id=Integer.parseInt(request.getParameter("customer_id"));
 
+            VehicleDao vehicleDao=new VehicleDao();
             vehicleDao.setId(id);
+
             request.setAttribute("id",id);
             request.setAttribute("brand",brand);
             request.setAttribute("model",model);

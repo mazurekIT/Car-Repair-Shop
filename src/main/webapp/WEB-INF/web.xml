@@ -22,8 +22,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
-
-
     //ORDERS
     <servlet>
         <servlet-name>OrderSave</servlet-name>
@@ -78,7 +76,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>OrderUpdate</servlet-name>
         <url-pattern>/order_update</url-pattern>
     </servlet-mapping>
-
 
 
     //EMPOLYEE
@@ -163,9 +160,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
-
-
-
     //VEHICLE
     <servlet>
         <servlet-name>VehicleSave</servlet-name>
@@ -232,22 +226,8 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/vehicle_update</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>VehicleHistory</servlet-name>
-        <servlet-class>pl.coderslab.controller.Vehicle.VehicleHistory</servlet-class>
-        <init-param>
-            <param-name>link</param-name>
-            <param-value>/WEB-INF/vehicle-forms/VehicleHistory.jsp</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>VehicleHistory</servlet-name>
-        <url-pattern>/vehicle_history</url-pattern>
-    </servlet-mapping>
 
-
-
-    //CUSTOMER
+    //CUSTOMER SAVE
 
     <servlet>
         <servlet-name>CustomerSave</servlet-name>
@@ -262,6 +242,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/customer_save</url-pattern>
     </servlet-mapping>
 
+    //CUSTOMER DELETE
 
     <servlet>
         <servlet-name>CustomerDelete</servlet-name>
@@ -276,6 +257,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/customer_delete</url-pattern>
     </servlet-mapping>
 
+    //CUSTOMER LOAD ALL
 
     <servlet>
         <servlet-name>CustomerLoadAll</servlet-name>
@@ -290,18 +272,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/customer_load_all</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>CustomerFound</servlet-name>
-        <servlet-class>pl.coderslab.controller.Customer.CustomerFound</servlet-class>
-        <init-param>
-            <param-name>link</param-name>
-            <param-value>/WEB-INF/Customer-forms/foundCustomer.jsp</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CustomerFound</servlet-name>
-        <url-pattern>/customer_found</url-pattern>
-    </servlet-mapping>
+    //CUSTOMER UPDATE
 
     <servlet>
         <servlet-name>CustomerUpdate</servlet-name>
@@ -315,6 +286,23 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>CustomerUpdate</servlet-name>
         <url-pattern>/CustomerUpdate</url-pattern>
     </servlet-mapping>
+
+
+    //CUSTOMER FOUND BY SURNAME
+
+    <servlet>
+        <servlet-name>CustomerFound</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerFound</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/foundCustomer.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerFound</servlet-name>
+        <url-pattern>/customer_found</url-pattern>
+    </servlet-mapping>
+
 
     //STATUS
     <servlet>
@@ -375,18 +363,19 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
-
     //FILTRY
     <filter>
 
         <filter-name>EncodingFilter</filter-name>
-        <filter-class>pl.coderslab.filters.EncodingFilter </filter-class>
+        <filter-class>pl.coderslab.filters.EncodingFilter</filter-class>
         <init-param>
             <param-name>charsetEncoding</param-name>
-            <param-value>UTF-8</param-value></init-param>
+            <param-value>UTF-8</param-value>
+        </init-param>
         <init-param>
             <param-name>contentType</param-name>
-            <param-value>text/html</param-value></init-param>
+            <param-value>text/html</param-value>
+        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>EncodingFilter</filter-name>

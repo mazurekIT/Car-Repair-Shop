@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Wyślij"></td>
+            <td><input type="submit" value="Zapisz"></td>
         </tr>
     </table>
 

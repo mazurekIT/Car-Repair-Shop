@@ -56,13 +56,9 @@ public class ServletOrderUpdate extends HttpServlet {
         orderDao.setId(id);
         orderDao.update();
         } catch (NumberFormatException e) {
-
             System.out.println("zle wartosci");
-
         } catch (SQLException e) {
-
             e.printStackTrace();
-
         }
 
         doGet(request,response);

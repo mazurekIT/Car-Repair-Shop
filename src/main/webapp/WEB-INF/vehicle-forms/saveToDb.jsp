@@ -1,37 +1,69 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--TODO czy można to jakoś umieścić w filtrze--%>
 
 
-<form action="/vehicle_save" method="post">
-    <label>
-        Marka:
-        <input type="text" name="brand">
-    </label>
-    <br>
-    <label>
-        Model:
-        <input type="text" name="model">
-    </label>
-    <br>
-    <label>
-        Rok produkcji:
-        <input type="number" name="production_date">
-    </label>
-    <br>
-    <label>
-        Nr rejestracyjny:
-        <input type="text" name="plate_number">
-    </label>
-    <br>
-    <label>
-        Data kolejnego przeglądu:
-        <input type="date" name="next_service_date">
-    </label>
-    <br>
-    <label>
-        Id klienta:
-        <input type="number" name="customer_id">
-    </label>
-    <br>
-    <input type="submit" value="Wyślij">
+<form action="/vehicle_save" method="POST">
+
+    <table>
+        <tr>
+            <td> Marka:</td>
+            <td><input type="text" name="brand" required></td>
+        </tr>
+        <tr>
+            <td> Model:</td>
+            <td><input type="text" name="model" required></td>
+        </tr>
+        <tr>
+            <td> Rok produkcji:</td>
+            <td><input type="number" name="production_date"></td>
+        </tr>
+        <tr>
+            <td> Nr rejestracyjny:</td>
+            <td><input type="text" name="plate_number" required></td>
+        </tr>
+        <tr>
+            <td> Data kolejnego przeglądu:</td>
+            <td><input type="date" name="next_service_date"></td>
+        </tr>
+        <tr>
+            <td> Id klienta:</td>
+            <td><input type="number" name="customer_id"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Zapisz"></td>
+        </tr>
+    </table>
+
+    <%--<label>--%>
+    <%--Marka:--%>
+    <%--<input type="text" name="brand">--%>
+    <%--</label>--%>
+    <%--<br>--%>
+    <%--<label>--%>
+    <%--Model:--%>
+    <%--<input type="text" name="model">--%>
+    <%--</label>--%>
+    <%--<br>--%>
+    <%--<label>--%>
+    <%--Rok produkcji:--%>
+    <%--<input type="number" name="production_date">--%>
+    <%--</label>--%>
+    <%--<br>--%>
+    <%--<label>--%>
+    <%--Nr rejestracyjny:--%>
+    <%--<input type="text" name="plate_number">--%>
+    <%--</label>--%>
+    <%--<br>--%>
+    <%--<label>--%>
+    <%--Data kolejnego przeglądu:--%>
+    <%--<input type="date" name="next_service_date">--%>
+    <%--</label>--%>
+    <%--<br>--%>
+    <%--<label>--%>
+    <%--Id klienta:--%>
+    <%--<input type="number" name="customer_id">--%>
+    <%--</label>--%>
+    <%--<br>--%>
+    <%--<input type="submit" value="Wyślij">--%>
+
 </form>

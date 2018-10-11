@@ -9,8 +9,8 @@
         <td>Numer Telefonu</td>
         <td>Notatka</td>
         <td>Koszt roboczogodziny</td>
-        <td>Edycja pracownika</td>
-        <td>Usuwanie pracownika</td>
+        <td>Edycja</td>
+        <td>Usuwanie</td>
         <td>Historia zleceń</td>
 
     </tr>
@@ -25,18 +25,18 @@
             <td>${lista.hourly}</td>
             <td>
                 <a href="/employee_update?id=${lista.id}&name=${lista.name}&lastname=${lista.lastname}&adress=${lista.adress}&employee_phone=${lista.employee_phone}&note=${lista.note}&hourly=${lista.hourly}">
-                    <button type="button" class="btn btn-employee">EDYTUJ PRACOWNIKA</button>
+                    <button type="button" class="btn btn-employee">EDYTUJ</button>
                 </a>
 
             </td>
             <td>
                 <a href="/employee_delete?id=${lista.id}">
-                    <button type="button" class="btn btn-employee">USUN PRACOWNIKA</button>
+                    <button type="button" class="btn btn-employee">USUŃ</button>
                 </a>
             </td>
             <td>
                 <a href="/employee_orders?employee_id=${lista.id}">
-                    <button type="button" class="btn btn-employee">Historia zleceń</button>
+                    <button type="button" class="btn btn-employee">ZLECENIA PRACOWNIKA</button>
                 </a>
 
             </td>
