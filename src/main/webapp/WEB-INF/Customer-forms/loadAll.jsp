@@ -37,9 +37,7 @@
     <button type="button" class="btn btn-employee">DODAJ KLIENTA</button>
 </a>
 <br>
-<p>
 
-</p>
 <form action="/customer_found" method="post">
     <label>
         Wyszukaj klienta po nazwisku:
@@ -47,4 +45,5 @@
     </label>
     <input type="submit" class="btn btn-employee" value="Szukaj">
 </form>
-`
+
+

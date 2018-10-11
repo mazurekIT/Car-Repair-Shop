@@ -275,3 +275,4 @@
 //        return "id: " + id + ", utworzono: " + created + ", aktualizowano: " + updated + ", opis: " + description + ", id zadania: " + exerciseId + ", id użytkownika: " + userId;
 //    }
 //}
+

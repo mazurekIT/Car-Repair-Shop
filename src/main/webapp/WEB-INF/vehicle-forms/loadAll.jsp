@@ -47,6 +47,6 @@
 </table>
 <br>
 <a href="/vehicle_save">
-    <button type="button" class="btn btn-raport">Dodaj samochód</button>
+    <button type="button" class="btn btn-raport">DODAJ SAMOCHÓD</button>
 </a>
 

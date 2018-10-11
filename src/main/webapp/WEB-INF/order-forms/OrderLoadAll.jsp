@@ -68,5 +68,5 @@
 </table>
 <br>
 <a href="/order_save">
-    <button type="button" class="btn btn-order">Dodaj nowe zlecenie</button>
+    <button type="button" class="btn btn-order">DODAJ ZLECENIE</button>
 </a>

@@ -18,6 +18,6 @@
 </table>
 <br>
 <a href="/status_save">
-    <button type="button" class="btn btn-raport">Dodaj status</button>
+    <button type="button" class="btn btn-raport">DODAJ STATUS</button>
 </a>
 
