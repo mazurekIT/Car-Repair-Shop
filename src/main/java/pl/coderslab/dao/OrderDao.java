@@ -3,11 +3,7 @@ package pl.coderslab.dao;
 import pl.coderslab.DbUtil.DbUtil;
 import pl.coderslab.classes.Order;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Date;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +66,7 @@ public class OrderDao extends Order {
 
             } else {
 
-                String sql = "update orders set date_in = ?,date_out = ?, started_date = ?, employee_id = ?, issue_note = ?, repair_note = ?, status_id = ?, vehicle_id = ?, repair_cost = ?, parts_cost = ?, man_hours = ?, where id=?";
+                String sql = "update orders set date_in = ?,date_out = ?, started_date = ?, employee_id = ?, issue_note = ?, repair_note = ?, status_id = ?, vehicle_id = ?, repair_cost = ?, parts_cost = ?, man_hours = ? where id=?";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -201,8 +197,108 @@ public class OrderDao extends Order {
         return null;
 
     }
+    public static ArrayList<OrderDao> EmployeeOrders(int employee_id) throws SQLException {
+        try {
+            ArrayList<OrderDao> orders1 = new ArrayList<>();
+            Connection connection = DbUtil.getConn();
+            String sql = "select * from orders where employee_id=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, employee_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            getOrderData(orders1,resultSet);
+            return orders1;
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    //-----------------------3---------------------------------
+//    public static VehicleDao loadVehiclesByCustomerId(int customer_id){
+//        try{
+//            Connection connection = DbUtil.getConn();
+//            String sql = "select * from vehicles where customer_id=?";
+//            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//            preparedStatement.setInt(1,customer_id);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            return getVehiclesData(resultSet);
+//        }catch (SQLException e){
+//            System.out.println("Błąd SQL");
+//        }
+//        return null;
+//    }
+    //-----------------------4---------------------------------
+    private static OrderDao getOrdersData(ResultSet resultSet) throws SQLException {
+        if (resultSet.next()) {
+            OrderDao loadedOrder = new OrderDao();
+
+            loadedOrder.setId(resultSet.getInt("id"));
+
+            loadedOrder.setDate_in(resultSet.getDate("date_in"));
+
+            loadedOrder.setDate_out(resultSet.getDate("date_out"));
+
+            loadedOrder.setStarted_date(resultSet.getDate("started_date"));
+
+            loadedOrder.setEmployee_id(resultSet.getInt("employee_id"));
+
+            loadedOrder.setIssue_note(resultSet.getString("issue_note"));
+
+            loadedOrder.setRepair_note(resultSet.getString("repair_note"));
+
+            loadedOrder.setStatus_id(resultSet.getInt("status_id"));
+
+            loadedOrder.setVehicle_id(resultSet.getInt("vehicle_id"));
+
+            loadedOrder.setRepair_cost(resultSet.getInt("repair_cost"));
+
+            loadedOrder.setParts_cost(resultSet.getInt("parts_cost"));
+
+            loadedOrder.setMan_hours(resultSet.getInt("man_hours"));
 
 
+            return loadedOrder;
+        }else {
+            return null;
+        }
+    }
+
+    public static ArrayList<OrderDao> RecentOrdersForEmployee(int employee_id) throws SQLException  {
+        try {
+
+            Connection connection = DbUtil.getConn();
+            ArrayList<OrderDao> orders2 = new ArrayList<>();
+            String sql = "select * from orders where status_id != 5 AND employee_id=?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, employee_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            getOrderData(orders2,resultSet);
+            return orders2;
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ArrayList<OrderDao> VehicleHistory(int vehicle_id) throws SQLException  {
+        try {
+
+            Connection connection = DbUtil.getConn();
+            ArrayList<OrderDao> orders3 = new ArrayList<>();
+            String sql = "select * from orders where vehicle_id=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, vehicle_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            getOrderData(orders3,resultSet);
+            return orders3;
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
+
 
 

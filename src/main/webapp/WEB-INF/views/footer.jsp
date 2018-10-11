@@ -2,6 +2,8 @@
 <%--TODO czy można to jakoś umieścić w filtrze--%>
 
 <footer>
+
+
     <p>
         Kontakt:
         <br>mailowy: <a href="mailto:someone@example.com">someone@example.com</a>.

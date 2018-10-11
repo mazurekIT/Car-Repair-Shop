@@ -1,6 +1,4 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--TODO czy można to jakoś umieścić w filtrze--%>
 
 <header>
 
@@ -16,6 +14,7 @@
                     </a>
                 </div>
             </div>
+
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white bg-warning o-hidden h-8">
                     <a class="card-footer text-white clearfix small z-1" href="/orders_load_all">
@@ -26,6 +25,7 @@
                     </a>
                 </div>
             </div>
+
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white bg-success o-hidden h-8">
                     <a class="card-footer text-white clearfix small z-1" href="/employee_load_all">

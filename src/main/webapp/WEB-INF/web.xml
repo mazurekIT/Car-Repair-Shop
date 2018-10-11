@@ -111,6 +111,45 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/employee_load_all</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>EmployeeUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeUpdate.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeUpdate</servlet-name>
+        <url-pattern>/employee_update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeOrders</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeOrders</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeAllOrders.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeOrders</servlet-name>
+        <url-pattern>/employee_orders</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeeRecent</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeRecent</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeRecent.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeRecent</servlet-name>
+        <url-pattern>/employee_recent</url-pattern>
+    </servlet-mapping>
+
 
 
 
@@ -156,6 +195,19 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>VehicleLoadByCustomerId</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleLoadByCustomerId</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/vehicleLoadByCustomerId.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleLoadByCustomerId</servlet-name>
+        <url-pattern>/vehicle_load_by_customer_id</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>VehicleUpdate</servlet-name>
         <servlet-class>pl.coderslab.controller.Vehicle.VehicleUpdate</servlet-class>
         <init-param>
@@ -168,6 +220,18 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/vehicle_update</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>VehicleHistory</servlet-name>
+        <servlet-class>pl.coderslab.controller.Vehicle.VehicleHistory</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/vehicle-forms/VehicleHistory.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleHistory</servlet-name>
+        <url-pattern>/vehicle_history</url-pattern>
+    </servlet-mapping>
 
 
 

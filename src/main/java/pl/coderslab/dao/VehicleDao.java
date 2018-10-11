@@ -72,19 +72,19 @@ public class VehicleDao extends Vehicle {
 
     //-----------------------3---------------------------------
 
-    public static VehicleDao loadVehiclesByCustomerId(int customer_id){
-        try{
-            Connection connection = DbUtil.getConn();
-            String sql = "select * from vehicles where customer_id=?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1,customer_id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            return getVehiclesData(resultSet);
-        }catch (SQLException e){
-            System.out.println("Błąd SQL");
-        }
-        return null;
-    }
+//    public static VehicleDao loadVehiclesByCustomerId(int customer_id){
+//        try{
+//            Connection connection = DbUtil.getConn();
+//            String sql = "select * from vehicles where customer_id=?";
+//            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//            preparedStatement.setInt(1,customer_id);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            return getVehiclesData(resultSet);
+//        }catch (SQLException e){
+//            System.out.println("Błąd SQL");
+//        }
+//        return null;
+//    }
 
     //-----------------------4---------------------------------
     private static VehicleDao getVehiclesData(ResultSet resultSet) throws SQLException {
@@ -107,6 +107,23 @@ public class VehicleDao extends Vehicle {
     }
 
     //-----------------------5---------------------------------
+
+    public static ArrayList<VehicleDao> loadVehiclesByCustomerId(int customer_id) {
+        try {
+            Connection connection = DbUtil.getConn();
+            ArrayList<VehicleDao> vehicleDaos = new ArrayList<>();
+            String sql = "SELECT * FROM vehicles where customer_id="+customer_id;
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            getVehiclesDate(vehicleDaos, resultSet);
+            return vehicleDaos;
+        } catch (SQLException e) {
+            System.out.println("Błąd load all");
+        }
+        return null;
+    }
+
+    //-----------------------5b---------------------------------
 
     public static ArrayList<VehicleDao> loadAllVehicles() {
         try {

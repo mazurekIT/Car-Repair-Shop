@@ -1,6 +1,6 @@
 package pl.coderslab.controller.Employee;
 
-import pl.coderslab.dao.EmployeeDao;
+import pl.coderslab.dao.OrderDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-@WebServlet(name = "EmployeeDel")
-public class EmployeeDel extends HttpServlet {
+@WebServlet(name = "EmployeeRecent")
+public class EmployeeRecent extends HttpServlet {
     String link;
 
     public void init() {
@@ -22,37 +23,25 @@ public class EmployeeDel extends HttpServlet {
 
         }
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            EmployeeDao employeeDaoDel = new EmployeeDao();
-            employeeDaoDel.setId(id);
-            employeeDaoDel.delete();
-        } catch (NumberFormatException e) {
-            System.out.println("zle wartosci");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        request.setAttribute("link", "/WEB-INF/views/home.jsp");
-        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            EmployeeDao employeeDao1=new EmployeeDao();
-            int id = Integer.parseInt(request.getParameter("id"));
-            employeeDao1.setId(id);
-            request.setAttribute("id",id);
+
+            int employee_id = Integer.parseInt(request.getParameter("employee_id"));
+
+            ArrayList<OrderDao> lista = OrderDao.RecentOrdersForEmployee(employee_id);
+            request.setAttribute("lista",lista);
+
         }catch (NumberFormatException e){
 
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         request.setAttribute("link", link);
         getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
 
     }
 }
-

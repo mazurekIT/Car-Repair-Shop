@@ -73,6 +73,7 @@ public class EmployeeDao extends Employee {
     private static void getEmployeeData(ArrayList<EmployeeDao> employees, ResultSet resultSet) throws SQLException {
         while (resultSet.next()) {
             EmployeeDao employeeDao = new EmployeeDao();
+
             employeeDao.setId(resultSet.getInt("id"));
             employeeDao.setName(resultSet.getString("name"));
             employeeDao.setLastname(resultSet.getString("lastname"));
@@ -99,6 +100,25 @@ public class EmployeeDao extends Employee {
         }
         return null;
     }
+    public void updateDb() throws SQLException {
+        try {
+            Connection connection = DbUtil.getConn();
+            String sql = "update employees set name=?, lastname=?,adress=?, employee_phone=?, note=?,hourly=? where id=?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, this.getName());
+            preparedStatement.setString(2, this.getLastname());
+            preparedStatement.setString(3, this.getAdress());
+            preparedStatement.setString(4, this.getEmployee_phone());
+            preparedStatement.setString(5, this.getNote());
+            preparedStatement.setInt(6, this.getHourly());
+            preparedStatement.setInt(7, this.getId());
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

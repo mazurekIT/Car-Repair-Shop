@@ -20,7 +20,7 @@
             <td>${lis.surname}</td>
             <td>${lis.birthDate}</td>
             <td>${lis.customer_phone}</td>
-            <%--<td><a href="/vehicle_update?id=${vehicle.id}"><button type="button" class="btn btn-raport">Lista Samochodów</button></td>--%>
+            <td><a href="/vehicle_load_by_customer_id?customer_id=${lis.id}"><button type="button" class="btn btn-raport">Lista Samochodów</button></td>
         </tr>
 
     </c:forEach>
