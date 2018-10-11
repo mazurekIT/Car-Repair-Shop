@@ -56,7 +56,7 @@
 
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white bg-dark o-hidden h-8">
-                    <a class="card-footer text-white clearfix small z-1" href="/#">
+                    <a class="card-footer text-white clearfix small z-1" href="/raport_home">
                         <span class="float-left">RAPORTY</span>
                         <span class="float-right">
             <i class="fas fa-angle-right"></i>
