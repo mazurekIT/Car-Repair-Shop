@@ -25,11 +25,11 @@ public class Raport1 extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        String date_start = request.getParameter("date_start");
-//        String date_end = request.getParameter("date_end");
-//
+        String date_start = request.getParameter("date_start");
+        String date_end = request.getParameter("date_end");
+
 //        ArrayList<Raport1Dao> raport1 = Raport1Dao.getRaport1(date_start, date_end);
-//
+
 //        request.setAttribute("raport1",raport1);
 //        getServletContext().getRequestDispatcher("/WEB-INF/raports-forms/raport1Load.jsp").forward(request, response);
 
