@@ -51,22 +51,6 @@ public class CustomerDao extends Customer {
         }
     }
 
-    public void delete() throws SQLException {
-
-        try (Connection connection = DbUtil.getConn()) {
-            if (this.getId() != 0) {
-            }
-            String sql = "DELETE FROM customers WHERE id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, this.getId());
-            preparedStatement.executeUpdate();
-            this.setId(0);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-    }
 
     private static void getCustomerData(ArrayList<CustomerDao> CustomerLista, ResultSet resultSet) throws SQLException {
 
@@ -77,7 +61,6 @@ public class CustomerDao extends Customer {
             loadedCustomer.setSurname(resultSet.getString("surname"));
             loadedCustomer.setBirthDate(resultSet.getDate("birthDate"));
             loadedCustomer.setCustomer_phone(resultSet.getString("customer_phone"));
-
             CustomerLista.add(loadedCustomer);
         }
 
@@ -99,8 +82,60 @@ public class CustomerDao extends Customer {
 
         }
         return null;
-
     }
+
+    public static ArrayList<CustomerDao> loadCustomerBySurname(String surname) {
+        try {
+            Connection connection = DbUtil.getConn();
+            ArrayList<CustomerDao> customers = new ArrayList<>();
+            String sql = "SELECT * FROM customers WHERE surname = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, surname);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            getCustomerData(customers, resultSet);
+            return customers;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void editCustomer() throws SQLException {
+
+        try {
+            Connection connection = DbUtil.getConn();
+            String sql = "update customers set name=?, surname=?, birthdate=?, customer_phone=? WHERE id=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, this.getName());
+            preparedStatement.setString(2, this.getSurname());
+            preparedStatement.setDate(3, this.getBirthDate());
+            preparedStatement.setString(4, this.getCustomer_phone());
+            preparedStatement.setInt(5, this.getId());
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void delete() throws SQLException {
+
+        try (Connection connection = DbUtil.getConn()) {
+            if (this.getId() != 0) {
+            }
+            String sql = "DELETE FROM customers WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, this.getId());
+            preparedStatement.executeUpdate();
+            this.setId(0);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
+
 
 }
 

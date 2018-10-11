@@ -278,6 +278,31 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/customer_load_all</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>CustomerFound</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerFound</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/foundCustomer.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerFound</servlet-name>
+        <url-pattern>/customer_found</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerUpdate</servlet-name>
+        <servlet-class>pl.coderslab.controller.Customer.CustomerUpdate</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/Customer-forms/editCustomer.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerUpdate</servlet-name>
+        <url-pattern>/CustomerUpdate</url-pattern>
+    </servlet-mapping>
 
     //STATUS
     <servlet>
