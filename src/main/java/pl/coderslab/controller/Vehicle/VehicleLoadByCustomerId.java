@@ -29,8 +29,8 @@ public class VehicleLoadByCustomerId extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             int customer_id = Integer.parseInt(request.getParameter("customer_id"));
-            ArrayList<VehicleDao> vehicleDaosList = VehicleDao.loadVehiclesByCustomerId(customer_id);
-            request.setAttribute("vehicleDaosList", vehicleDaosList);
+            ArrayList<VehicleDao> vehicleDList = VehicleDao.loadVehiclesByCustomerId(customer_id);
+            request.setAttribute("vehicleDList", vehicleDList);
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
