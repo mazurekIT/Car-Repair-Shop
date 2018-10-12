@@ -160,6 +160,20 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>EmployeeDetails</servlet-name>
+        <servlet-class>pl.coderslab.controller.Employee.EmployeeDetails</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/employee-forms/EmployeeDetails.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeDetails</servlet-name>
+        <url-pattern>/employee_details</url-pattern>
+    </servlet-mapping>
+
+
     //VEHICLE
     <servlet>
         <servlet-name>VehicleSave</servlet-name>
@@ -401,7 +415,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>Raport1load</servlet-name>
         <url-pattern>/raport_1_load</url-pattern>
     </servlet-mapping>
-
 
 
     //FILTRY

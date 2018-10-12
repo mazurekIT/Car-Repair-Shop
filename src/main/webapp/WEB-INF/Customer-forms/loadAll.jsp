@@ -19,7 +19,7 @@
                 <thead>
                 <tr role="row">
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
-                        aria-label="Rendering engine: activate to sort column ascending" >
+                        aria-label="Rendering engine: activate to sort column ascending">
                         Id
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
@@ -27,7 +27,7 @@
                         Imię
                     </th>
                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
-                        aria-label="Platform(s): activate to sort column descending"aria-sort="ascending">
+                        aria-label="Platform(s): activate to sort column descending" aria-sort="ascending">
                         Nazwisko
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
@@ -39,7 +39,7 @@
                         Numer telefonu
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
-                        aria-label="CSS grade: activate to sort column ascending" >
+                        aria-label="CSS grade: activate to sort column ascending">
                         Edycja
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
@@ -72,8 +72,8 @@
                 <tr>
                     <td colspan="7">
                         <a href="/customer_save">
-                        <button type="button" class="btn btn-employee">DODAJ KLIENTA</button>
-                    </a>
+                            <button type="button" class="btn btn-employee">DODAJ KLIENTA</button>
+                        </a>
                     </td>
 
                 </tr>

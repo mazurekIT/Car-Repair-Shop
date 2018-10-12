@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
-
 <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
     <div class="row">
         <div class="col-sm-12">
@@ -16,7 +15,7 @@
                         Id
                     </th>
                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
-                        aria-label="Platform(s): activate to sort column descending"aria-sort="ascending">
+                        aria-label="Platform(s): activate to sort column descending" aria-sort="ascending">
                         Status
                     </th>
 

@@ -10,7 +10,7 @@
                 <thead>
                 <tr role="row">
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
-                        aria-label="Rendering engine: activate to sort column ascending" >
+                        aria-label="Rendering engine: activate to sort column ascending">
                         Id
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
@@ -18,7 +18,7 @@
                         Imię
                     </th>
                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
-                        aria-label="Platform(s): activate to sort column descending"aria-sort="ascending">
+                        aria-label="Platform(s): activate to sort column descending" aria-sort="ascending">
                         Nazwisko
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
@@ -48,36 +48,9 @@
                 </c:forEach>
 
 
-
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-
-
-<%--<table border="1" cellpadding="5">--%>
-    <%--<tr>--%>
-        <%--<td>Id</td>--%>
-        <%--<td>Imię</td>--%>
-        <%--<td>Nazwisko</td>--%>
-        <%--<td>Data urodzenia</td>--%>
-        <%--<td>Numer telefonu</td>--%>
-    <%--</tr>--%>
-
-    <%--<c:forEach var="lis" items="${listadanychnazwiska}">--%>
-
-        <%--<tr>--%>
-            <%--<td>${lis.id}</td>--%>
-            <%--<td>${lis.name}</td>--%>
-            <%--<td>${lis.surname}</td>--%>
-            <%--<td>${lis.birthDate}</td>--%>
-            <%--<td>${lis.customer_phone}</td>--%>
-
-        <%--</tr>--%>
-
-    <%--</c:forEach>--%>
-
-<%--</table>--%>
-<%--<br>--%>

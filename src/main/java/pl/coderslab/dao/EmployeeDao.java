@@ -118,7 +118,22 @@ public class EmployeeDao extends Employee {
             e.printStackTrace();
         }
     }
-
+    public static ArrayList<EmployeeDao> EmployeeDetails(int id) throws SQLException {
+        try {
+            ArrayList<EmployeeDao> employeeDaos = new ArrayList<>();
+            Connection connection = DbUtil.getConn();
+            String sql = "select * from employees where id=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            getEmployeeData(employeeDaos,resultSet);
+            return employeeDaos;
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 }

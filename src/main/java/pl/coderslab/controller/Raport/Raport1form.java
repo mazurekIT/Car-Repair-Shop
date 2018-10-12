@@ -12,9 +12,10 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
 
-@WebServlet(name = "Raport1")
-public class Raport1 extends HttpServlet {
+@WebServlet(name = "Raport1form")
+public class Raport1form extends HttpServlet {
     String link;
+
     public void init() {
         try {
             link = getInitParameter("link");
@@ -23,15 +24,17 @@ public class Raport1 extends HttpServlet {
         }
 
     }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String date_start = request.getParameter("date_start");
         String date_end = request.getParameter("date_end");
 
-//        ArrayList<Raport1Dao> raport1 = Raport1Dao.getRaport1(date_start, date_end);
-
-//        request.setAttribute("raport1",raport1);
-//        getServletContext().getRequestDispatcher("/WEB-INF/raports-forms/raport1Load.jsp").forward(request, response);
+//        ArrayList<ArrayList> raportOne = Raport1Dao.rap1(date_start, date_end);
+//response.getWriter().append("aaaaaaaaaaaaaaa");
+        request.setAttribute("link", "/raport_1_load");
+//        request.setAttribute("raportOne", raportOne);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
 
     }
 
