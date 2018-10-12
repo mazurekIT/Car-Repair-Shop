@@ -2,45 +2,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-
-<%--<table border="1" cellpadding="5">--%>
-    <%--<tr>--%>
-        <%--<td>Imię</td>--%>
-        <%--<td>Nazwisko</td>--%>
-        <%--<td></td>--%>
-    <%--</tr>--%>
-    <%--<c:forEach var="lista" items="${lista}">--%>
-        <%--<tr>--%>
-            <%--<td>${lista.name}</td>--%>
-            <%--<td>${lista.lastname}</td>--%>
-            <%--<td>--%>
-                <%--<a href="/employee_recent?employee_id=${lista.id}">--%>
-                    <%--<button type="button" class="btn btn-employee">AKTUALNE ZLECENIA</button>--%>
-                <%--</a>--%>
-            <%--</td>--%>
-        <%--</tr>--%>
-    <%--</c:forEach>--%>
-
-<%--</table>--%>
-
-
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3>AKTUALNE ZLECENIA<h3>
-    </div>
-    <!-- /.panel-heading -->
-    <div class="panel-body">
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover">
+<div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+    <div class="row">
+        <div class="col-sm-12">
+            <table width="100%" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline"
+                   id="dataTables-example" role="grid" aria-describedby="dataTables-example_info" style="width: 100%;">
                 <thead>
-                <tr>
-                    <td>Imię</td>
-                    <td>Nazwisko</td>
-                    <td></td>
+                <tr role="row">
+
+                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
+                        aria-label="Browser: activate to sort column ascending">
+                        Imię
+                    </th>
+                    <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
+                        aria-label="Platform(s): activate to sort column descending"aria-sort="ascending">
+                        Nazwisko
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1"
+                        aria-label="Engine version: activate to sort column ascending">
+                        #
+                    </th>
+
                 </tr>
                 </thead>
                 <tbody>
+
                 <c:forEach var="lista" items="${lista}">
                     <tr>
                         <td>${lista.name}</td>
@@ -52,10 +38,9 @@
                         </td>
                     </tr>
                 </c:forEach>
+
                 </tbody>
             </table>
         </div>
-        <!-- /.table-responsive -->
     </div>
-    <!-- /.panel-body -->
 </div>

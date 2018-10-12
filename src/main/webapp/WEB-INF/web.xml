@@ -374,9 +374,10 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <url-pattern>/raport_home</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>Raport1</servlet-name>
-        <servlet-class>pl.coderslab.controller.Raport.Raport1</servlet-class>
+        <servlet-class>pl.coderslab.controller.Raport.Raport1form</servlet-class>
         <init-param>
             <param-name>link</param-name>
             <param-value>/WEB-INF/raports-forms/raport1Form.jsp</param-value>
@@ -386,6 +387,21 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
         <servlet-name>Raport1</servlet-name>
         <url-pattern>/raport_1_form</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Raport1load</servlet-name>
+        <servlet-class>pl.coderslab.controller.Raport.Raport1load</servlet-class>
+        <init-param>
+            <param-name>link</param-name>
+            <param-value>/WEB-INF/raports-forms/raport1Load.jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Raport1load</servlet-name>
+        <url-pattern>/raport_1_load</url-pattern>
+    </servlet-mapping>
+
 
 
     //FILTRY

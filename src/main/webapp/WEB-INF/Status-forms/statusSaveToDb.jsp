@@ -7,6 +7,6 @@
         Status:
         <input type="text" name="status">
     </label>
-    <br>
     <input type="submit" value="Wyślij">
 </form>
+
